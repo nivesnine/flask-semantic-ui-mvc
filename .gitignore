@@ -4,7 +4,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 venv/
-venv/*
 *.log
 .DS_Store
 app.db
