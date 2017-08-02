@@ -1,0 +1,11 @@
+.*
+!/.gitignore
+__pycache__/
+*.py[cod]
+*$py.class
+env/
+*.log
+.DS_Store
+app.db
+run.py
+error.log

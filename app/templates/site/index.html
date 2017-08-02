@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="ui vertical stackable grid">
+    <div class='eight wide centered center aligned middle aligned column'>
+      <h2 class="ui header">
+          Header
+      </h2>
+      {% if form.errors %}
+	{% for e in form.errors %}
+	  <p>{{ e }}</p>
+	{% endfor %}
+      {% endif %}
+      <form class='ui form' method='POST'>
+  	 {% for f in form %}
+	   <div class='field'>
+             {{ f(placeholder=f.name) }}
+	   </div>
+         {% endfor %}
+         <button class='ui button'>Submit</button>
+      </form>
+  </div>
+</div>
+
+<div class="ui vertical center aligned stackable grid" >
+  <div class="ui center aligned container">
+    <h1 class="ui header">
+        Another Header
+    </h1>
+    <p>
+        Some more text
+    </p>
+  </div>
+</div>
+
+<div class="ui vertical centered center aligned stackable grid">
+  <div class='eight wide middle aligned column'>
+   <div>
+    <h2 class="ui header">
+        YET ANOTHER HEADER
+    </h2>
+    <p>
+        TEXT
+    </p>
+    <button class='ui blue button'>SOME BUTTON</button>
+   </div>
+  </div>
+  <div class='eight wide middle aligned column'>
+   <div>
+    <h2 class="ui header">
+        DO IT YOURSELF
+    </h2>
+    <p>
+        MORE TEXT
+    </p>
+    <button class='ui green button'>ANOTHER BUTTON</button>
+   </div>
+  </div>
+</div>
+
+{% endblock %}

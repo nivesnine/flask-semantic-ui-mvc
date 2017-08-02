@@ -1,0 +1,44 @@
+{% macro menu() -%}
+<style>
+ .site-menu .toc.item{
+	display: none !important;
+ }
+ @media screen and (max-width: 991px){
+	.site-menu .item{
+		display: none !important;
+	}
+	.site-menu .toc.item{
+	        display: inline-block !important;
+	}
+ }
+</style>
+
+<div class="ui container">
+  <div class="ui large inverted secondary pointing menu site-menu">
+    <a class="toc item">
+      <i class="sidebar icon"></i>
+    </a>
+     <a class="item inverted {%- if request.path==url_for('site.index') %} active {% endif %}"
+        href="{{ url_for('site.index') }}">HOME</a>
+  </div>
+</div>
+{%- endmacro %}
+
+
+{% macro mobile_menu() -%}
+<div class="ui vertical inverted sidebar menu left">
+    <a class="item {%- if request.path==url_for('site.index') %} active {% endif %}"
+       href="{{ url_for('site.index') }}">Home</a>
+</div>
+{%- endmacro %}
+
+
+{% macro footer() -%}
+<div class="ui vertical footer segment m">
+    <div class="ui center aligned text container">
+      <div class="row">
+		    <p><i class='copyright icon'></i> {{ now.year }}</p>  
+      </div>
+    </div>
+  </div>
+{%- endmacro %}
