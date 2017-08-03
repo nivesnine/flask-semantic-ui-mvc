@@ -6,6 +6,8 @@ make sure to download a version of python3.x (I'm using 3.5 here)
 
 clone the repo into ```/var/www/<app_name>/```. Yes, put it inside ```<app_name>```
 
+replace every instance of ```<app_name>``` with whatever you want to call this thing
+
 ## setup environment
 ### change dir
 
