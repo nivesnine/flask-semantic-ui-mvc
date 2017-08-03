@@ -65,7 +65,8 @@ WantedBy=multi-user.target
 
 ```vi /etc/nginx/conf.d/<app_name>.conf```
 
-``` server {
+``` 
+server {
 
     listen 80;
 
