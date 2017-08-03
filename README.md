@@ -1,4 +1,4 @@
-#setup
+# setup
 ==========================
 note: this is a quick tutorial for centos7
 
@@ -7,43 +7,45 @@ make sure to download a version of python3.x (I'm using 3.5 here)
 
 clone the repo into ```/var/www/<app_name>/```. Yes, put it inside ```<app_name>```
 
-##setup environment
+## setup environment
 ==========================
-###change dir
+### change dir
 
 ```cd /var/www/<app_name>/```
 
-###create python3 virtual environment
+### create python3 virtual environment
 
 ```
 virtualenv -p /usr/local/bin/python3.5 venv
 ```
 
-###activate venv
+### activate venv
 
 ```
 source venv/bin/activate
 ```
 
-###install requirements
+### install requirements
 
 ```
 pip install -r requirements.txt
 ```
 
-###exit venv
+### exit venv
 
 ```deactivate```
 
-##create gunicorn daemon
+## create gunicorn daemon
 ======================
 
-###create the daemon service file
+### create the daemon service file
 
 ```vi /etc/systemd/system/<app_name>.service```
 
 ```
-[Unit] Description=Gunicorn instance to serve translate After=network.target
+[Unit]
+Description=Gunicorn instance to serve <app_name>
+After=network.target
 
 [Service] 
 User=root 
@@ -56,11 +58,11 @@ ExecStart=/var/www/<app_name>/venv/bin/gunicorn --workers 4 --bind unix:app.sock
 WantedBy=multi-user.target
 ```
 
-###make it available
+### make it available
 
 ```systemctl enable <app_name>```
 
-make nginx proxy
+### make nginx proxy
 
 ```vi /etc/nginx/conf.d/<app_name>.conf```
 
@@ -82,10 +84,10 @@ make nginx proxy
 }
 ```
 
-###reload nginx
+### reload nginx
 
 ```systemctl restart nginx```
 
-###run it
+### run it
 
 ```systemctl start <app_name>```
