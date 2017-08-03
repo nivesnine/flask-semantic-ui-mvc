@@ -1,5 +1,4 @@
 # setup
-==========================
 note: this is a quick tutorial for centos7
 
 make sure nginx is installed
@@ -8,7 +7,6 @@ make sure to download a version of python3.x (I'm using 3.5 here)
 clone the repo into ```/var/www/<app_name>/```. Yes, put it inside ```<app_name>```
 
 ## setup environment
-==========================
 ### change dir
 
 ```cd /var/www/<app_name>/```
@@ -36,7 +34,6 @@ pip install -r requirements.txt
 ```deactivate```
 
 ## create gunicorn daemon
-======================
 
 ### create the daemon service file
 
